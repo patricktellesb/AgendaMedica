@@ -1,0 +1,17 @@
+● src
++---● app
+|   +--● consultas
+|   |  |--consultas.component.ts|.html|.css
+|   |  +--● consulta
+|   |  |  |--consulta.component.ts|.html|.css
+|   |  |
+|   |  +--● consulta-list
+|   |  |  |--consulta-list.component.ts|.html|.css
+|   |  |
+|   |  +--● shared
+|   |     |--consulta.service.ts
+|   |     |--consulta.model.ts
+|   |
+|   |--app.module.ts
+|
+|--index.html (cdn path for bootstrap & fa icons)

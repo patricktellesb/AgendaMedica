@@ -1,0 +1,65 @@
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+  <input type="hidden" name="Id_Consulta"[value]="service.formData.Id_Consulta">
+<div class="form-group">
+  <div class="input-group">
+   <div class="input-group-prepend">
+    <div class="input-group-text bg-white">
+        <i class="fas fa-user-injured" [class.green-icon]="Nome_Paciente.valid" [class.red-icon]="Nome_Paciente.invalid && Nome_Paciente.touched"></i>
+
+    </div>
+   </div>
+   <input name ="Nome_Paciente" #Nome_Paciente="ngModel" [(ngModel)]="service.formData.Nome_Paciente" class="form-control" placeholder="Nome do Paciente" required maxlength="50">
+  </div>
+</div>
+
+<div class="form-group">
+    <div class="input-group">
+     <div class="input-group-prepend">
+        <div class="input-group-text bg-white">
+        <i class="fas fa-birthday-cake" [class.green-icon]="Dat_Nascimento.valid" [class.red-icon]="Dat_Nascimento.invalid && Dat_Nascimento.touched"></i>
+        </div>
+      </div>
+        <input name="Dat_Nascimento"  #Dat_Nascimento="ngModel"  [(ngModel)]="service.formData.Dat_Nascimento" class="form-control" type="date" required >
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="input-group">
+     <div class="input-group-prepend">
+        <div class="input-group-text bg-white">
+            <i class="far fa-clock" [class.green-icon]="Dat_Inicio_Consulta.valid" [class.red-icon]="Dat_Inicio_Consulta.invalid && Dat_Inicio_Consulta.touched"></i>
+        </div>
+      </div>
+        <input name="Dat_Inicio_Consulta"  #Dat_Inicio_Consulta="ngModel"  [(ngModel)]="service.formData.Dat_Inicio_Consulta" class="form-control" type="datetime-local" required  >
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="input-group">
+     <div class="input-group-prepend">
+        <div class="input-group-text bg-white">
+            <i class="fas fa-clock" [class.green-icon]="Dat_Fim_Consulta.valid" [class.red-icon]="Dat_Fim_Consulta.invalid && Dat_Fim_Consulta.touched"></i>
+        </div>
+      </div>
+        <input name="Dat_Fim_Consulta"  #Dat_Fim_Consulta="ngModel"  [(ngModel)]="service.formData.Dat_Fim_Consulta" class="form-control" type="datetime-local" required >
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="input-group">
+     <div class="input-group-prepend">
+      <div class="input-group-text bg-white">
+          <i class="far fa-sticky-note"></i>
+      </div>
+     </div>
+     <textarea name ="Observacao" #Nome_Paciente="ngModel" [(ngModel)]="service.formData.Observacao" class="form-control"  placeholder="Observacao" maxlength="300"></textarea>
+    </div>
+  </div>
+
+  <div class="form-group">
+  <button class="btn btn-success btn-lg btn-block" type="=submit" [disabled]="form.invalid"> <i class="far fa-save"></i> Cadastrar/Atualizar</button>
+  </div>
+
+</form>
+
+
